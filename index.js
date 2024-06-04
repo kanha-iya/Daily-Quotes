@@ -36,11 +36,11 @@ app.use(passport.session());
 
 // database 
 const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "secrets",
-  password: "KAN@db#2003",
-  port: 5432,
+  user: process.env.PG_USER,      //postgres user
+    host: process.env.PG_ENDPOINT,  //localhost (I also tried 127.0.0.1)
+    database: process.env.PG_DB,    //database name to connect to
+    password: process.env.PG_PASS,  //postgres user password
+    port: process.env.PG_PORT       //5432
 });
 db.connect();
 
