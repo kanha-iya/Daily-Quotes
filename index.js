@@ -13,7 +13,7 @@ import request  from "request";
 var category = 'happiness';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT ||  3000;
 const saltRounds = 10;
 env.config();
 
